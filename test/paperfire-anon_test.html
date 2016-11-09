@@ -8,23 +8,37 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
+    <link rel="import" href="../bower_components/polymerfire/firebase-app">
     <link rel="import" href="../paperfire-anon.html">
   </head>
   <body>
-
+    <firebase-app
+      id="app"
+      auth-domain="paperfireelements.firebaseapp.com"
+      database-url="https://paperfireelements.firebaseio.com/"
+      storage-bucket:
+      "paperfireelements.appspot.com"
+      api-key="AIzaSyBV90mRwJOGY7uO_RVWkchk9oUBx2E-sac"
+      messagingSender-id="637337808974"></firebase-app>
     <test-fixture id="basic">
       <template>
+
         <paperfire-anon></paperfire-anon>
       </template>
     </test-fixture>
 
     <script>
-      suite('paperfire-anon', function() {
+      suite('paperfire-anon', function () {
 
-        test('instantiating the element works', function() {
+        test('instantiating the element works', function () {
           var element = fixture('basic');
           assert.equal(element.is, 'paperfire-anon');
         });
+
+        test('access firebase sdk works', function () {
+          var element = fixture('basic');
+
+        })
 
       });
     </script>

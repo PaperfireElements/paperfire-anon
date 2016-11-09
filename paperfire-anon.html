@@ -1,20 +1,23 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymerfire/firebase-auth.html">
 
 <!--
 `paperfire-anon`
 an element to help manage anonymous authentication
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="paperfire-anon">
   <template>
     <style>
       :host {
-        display: block;
+        display: hidden;
       }
+
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <firebase-auth id="auth" user="{{_user}}"></firebase-auth>
+
   </template>
 
   <script>
@@ -23,12 +26,75 @@ an element to help manage anonymous authentication
       is: 'paperfire-anon',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'paperfire-anon',
+        authed: {
+          type: Boolean,
+          value: false,
+          notify: true,
+          reflectToAttribute: true
         },
+        debug: Boolean,
+        login: Boolean,
+        isAnonymous: {
+          type: Boolean,
+          value: false,
+          notify: true,
+          reflectToAttribute: true
+        },
+        uid: {
+          type: String,
+          value: null,
+          notify: true,
+          reflectToAttribute: true
+        },
+        _user: {
+          type: Object,
+          observer: '_onSync'
+        }
       },
 
+      ready: function () {
+        console.log('PAPERFIRE_ANON', 'READY', this.debug);
+        var vm = this;
+        var fb = this.$.auth.__data__.app;
+        if (this.login) {
+          fb.auth().onAuthStateChanged(function (user) {
+            if (vm.debug)
+              vm._debug('auth_state_changed', user);
+            if (user) {
+              console.log('ANON_USER', user);
+              vm.uid = user.uid;
+              vm.authed = true;
+              vm.isAnonymous = user.isAnonymous;
+            } else {
+              console.log('NO USER');
+              vm.authed = false;
+              vm.uid = null;
+              vm.isAnonymous = null;
+              firebase.auth().signInAnonymously().catch(function (error) {
+                console.error('ANON_SIGNIN:', error);
+              });
+            }
+          });
+        }
+      },
+
+      _onSync: function (user) {
+        console.log('_onSync', user);
+        if (user) {
+          this.uid = user.uid;
+          console.log('paperfire-anon', user);
+          if (user.isAnonymous) {
+            console.log('anonymous');
+            this.isAnonymous = true;
+          } else {
+            false;
+          }
+        }
+      },
+
+      _debug: function (message, data) {
+        console.log(message, data);
+      }
     });
   </script>
 </dom-module>
