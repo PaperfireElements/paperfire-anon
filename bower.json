@@ -2,6 +2,7 @@
   "name": "paperfire-anon",
   "description": "an element to help manage anonymous authentication",
   "main": "paperfire-anon.html",
+  "license": "MIT",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "polymerfire": "firebase/polymerfire#^0.10.2"
