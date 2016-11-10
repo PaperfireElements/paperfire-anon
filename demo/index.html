@@ -8,19 +8,28 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../polymerfire/firebase-app.html">
 
     <link rel="import" href="../paperfire-anon.html">
 
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
+    <style is="custom-style" include="demo-pages-shared-styles"></style>
   </head>
   <body>
 
     <div class="vertical-section-container centered">
       <h3>Basic paperfire-anon Demo</h3>
+      <!-- use firebase-app from polymerfire to initialize app -->
+      <firebase-app
+        id="app"
+        auth-domain="paperfireelements.firebaseapp.com"
+        database-url="https://paperfireelements.firebaseio.com/"
+        storage-bucket:
+        "paperfireelements.appspot.com"
+        api-key="AIzaSyBV90mRwJOGY7uO_RVWkchk9oUBx2E-sac"
+        messagingSender-id="637337808974"></firebase-app>
       <demo-snippet>
         <template>
-          <paperfire-anon></paperfire-anon>
+          <paperfire-anon is-anonymous="{{isAnon}}" uid="{{uid}}" debug></paperfire-anon>
         </template>
       </demo-snippet>
     </div>

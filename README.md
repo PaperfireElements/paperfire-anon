@@ -10,6 +10,7 @@ an element to help manage anonymous authentication
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../polymerfire/firebase-app.html">
     <link rel="import" href="paperfire-anon.html">
     <next-code-block></next-code-block>
   </template>
@@ -17,7 +18,16 @@ an element to help manage anonymous authentication
 ```
 -->
 ```html
-<paperfire-anon is-anonymous="{{isAnon}}">...</paperfire-anon>
+<!-- use firebase-app from polymerfire to initialize app -->
+<firebase-app
+  id="app"
+  auth-domain="paperfireelements.firebaseapp.com"
+  database-url="https://paperfireelements.firebaseio.com/"
+  storage-bucket:
+  "paperfireelements.appspot.com"
+  api-key="AIzaSyBV90mRwJOGY7uO_RVWkchk9oUBx2E-sac"
+  messagingSender-id="637337808974"></firebase-app>
+<paperfire-anon is-anonymous="{{isAnon}}" debug>...</paperfire-anon>
 ```
 ## Install the Polymer-CLI
 
