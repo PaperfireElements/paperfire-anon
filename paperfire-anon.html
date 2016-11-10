@@ -26,20 +26,25 @@ an element to help manage anonymous authentication
       is: 'paperfire-anon',
 
       properties: {
+        // true if user is authenticated
         authed: {
           type: Boolean,
           value: false,
           notify: true,
           reflectToAttribute: true
         },
+        //shows values in <pre>
         debug: Boolean,
+        // If true this will automatically check user and if null will login in anonymously.
         login: Boolean,
+        // true if users logged in anonymously
         isAnonymous: {
           type: Boolean,
           value: false,
           notify: true,
           reflectToAttribute: true
         },
+        // The current user's uid
         uid: {
           type: String,
           value: null,
