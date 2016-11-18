@@ -1,5 +1,5 @@
 # \<paperfire-anon\>
-
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://beta.webcomponents.org/element/paperfireElements/paperfire-anon)
 a polymer 1.0 element to help manage anonymous authentication
 
 
@@ -7,7 +7,7 @@ a polymer 1.0 element to help manage anonymous authentication
 - uid: String - user's uid
 - login: Boolean - if set the element will login in anonymously if firebase.auth() user is null
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://beta.webcomponents.org/element/paperfireElements/paperfire-anon)
+
 
 ##Demo
 <!---
