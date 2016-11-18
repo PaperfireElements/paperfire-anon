@@ -2,6 +2,10 @@
 
 an element to help manage anonymous authentication
 
+- isAnonymous: Boolean - true if user is anonymous
+- uid: String - user's uid
+- login: Boolean - if set the element will login in anonymously if firebase.auth() user is null
+
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://beta.webcomponents.org/element/paperfireElements/paperfire-anon)
 
 ##Demo
@@ -27,7 +31,9 @@ an element to help manage anonymous authentication
   "paperfireelements.appspot.com"
   api-key="AIzaSyBV90mRwJOGY7uO_RVWkchk9oUBx2E-sac"
   messagingSender-id="637337808974"></firebase-app>
-<paperfire-anon is-anonymous="{{isAnon}}" debug>...</paperfire-anon>
+<paperfire-anon is-anonymous="{{isAnon}}" uid="{{uid}}" login>...</paperfire-anon>
+<pre>isAnonymous: [[isAnon]]</pre>
+<pre>uid: [[uid]]</pre>
 ```
 ## Install the Polymer-CLI
 
