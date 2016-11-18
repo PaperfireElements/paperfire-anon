@@ -39,7 +39,7 @@ an element to help manage anonymous authentication
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
 
-## Viewing Your Application
+## Viewing paperfire-anon
 
 ```
 $ polymer serve
@@ -48,6 +48,7 @@ $ polymer serve
 
 ## Running Tests
 
+tests haven't been written yet :$
 ```
 $ polymer test
 ```
