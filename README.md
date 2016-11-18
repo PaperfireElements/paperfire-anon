@@ -1,6 +1,7 @@
 # \<paperfire-anon\>
 
-an element to help manage anonymous authentication
+a polymer 1.0 element to help manage anonymous authentication
+
 
 - isAnonymous: Boolean - true if user is anonymous
 - uid: String - user's uid
