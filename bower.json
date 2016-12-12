@@ -1,5 +1,6 @@
 {
   "name": "paperfire-anon",
+  "version": "v0.5.1",
   "description": "an element to help manage anonymous authentication",
   "main": "paperfire-anon.html",
   "license": "MIT",
@@ -13,10 +14,12 @@
     "web-component-tester": "^4.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
+  "ignore": [],
   "keywords": [
     "firebase",
     "webcomponents",
     "material",
+    "paperfire",
     "polymer",
     "auth",
     "anonymous",
