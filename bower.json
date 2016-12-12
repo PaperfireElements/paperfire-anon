@@ -1,5 +1,6 @@
 {
   "name": "paperfire-anon",
+  "version": "v0.5.1",
   "description": "an element to help manage anonymous authentication",
   "main": "paperfire-anon.html",
   "license": "MIT",
@@ -12,5 +13,19 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^4.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
-  }
+  },
+  "ignore": [],
+  "keywords": [
+    "firebase",
+    "webcomponents",
+    "material",
+    "paperfire",
+    "polymer",
+    "auth",
+    "anonymous",
+    "login"
+  ],
+  "authors": [
+    "Alexander Kushi-Willis <dev@ackushiw.com>"
+  ]
 }
